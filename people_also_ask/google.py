@@ -20,7 +20,7 @@ from people_also_ask.exceptions import (
 from people_also_ask.tools import CallingSemaphore
 
 
-URL = "https://www.google.com/search"
+URL = "https://www.google.fi/search"
 HEADERS = {
     'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
     " AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -43,10 +43,10 @@ semaphore = CallingSemaphore(
 @retryable(1)
 def search(keyword: str) -> Optional[BeautifulSoup]:
     """return html parser of google search result"""
-    params = {"q": keyword, "gl": "us"}
+    params = {"q": keyword, "gl": "fi"}
     try:
         with semaphore:
-            time.sleep(0.5)  # be nice with google :)
+            time.sleep(1.5)  # be nice with google :)
             response = SESSION.get(URL, params=params, headers=HEADERS)
     except Exception:
         import traceback
