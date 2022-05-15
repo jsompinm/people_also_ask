@@ -18,7 +18,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     long_description=local_file('README.md').read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/lagranges/people_also_ask",
+    url="https://github.com/jsompinm/people_also_ask",
     classifiers=[
 	"Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Utilities",
